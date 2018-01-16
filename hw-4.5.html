@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Object v-for </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+ 
+</head>
+
+ <body>
+
+    <div id="app" class="container">
+
+    <h1>This is me</h1>
+     <ul class="list-group">
+       <li v-for=" (val, key, idx) in me" class="list-group-item">
+         {{idx}}: {{key}} = {{val}}
+       </li>
+     </ul>
+     <pre>{{ $data }}</pre>
+    </div>
+    
+ </body>  
+
+ <script src="js/vue.js"></script>
+
+ <script>
+ new Vue({
+    el: '#app',
+    data: {
+        me: 
+            {
+             name: "Simon",
+             weight: 62,
+             height: 1.57,
+             eyeColor: 'brown',
+             favouriteFood: 'ugali',
+            }        
+    }
+ })
+ </script>
+
+</html>

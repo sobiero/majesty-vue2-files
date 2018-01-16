@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Upvote </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+ 
+</head>
+
+ <body>
+
+    <div id="app" class="container">
+
+    <h1>Upvote</h1>
+
+       <button @click="upvote" class="btn btn-primary">
+           Upvote ({{upvotes}})
+       </button>
+     <pre>{{ $data }}</pre>
+    </div>
+    
+
+ <script src="js/vue.js"></script>
+
+ <script>
+ new Vue({
+    el: '#app',
+    data: {
+        upvotes: 0      
+    },
+    methods: {
+        upvote: function(){
+            this.upvotes++;
+        }
+    }
+ })
+ </script>
+</body>
+
+</html>

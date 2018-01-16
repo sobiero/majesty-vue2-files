@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Upvote </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+ 
+</head>
+
+ <body>
+
+    <div id="app" class="container">
+
+    <h1>Type 2 numbers and choose operation.</h1>
+
+    <form class="form-inline">
+    <input v-model.number="a" class="form-control">
+    <select v-model="operator" class="form-control">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option> 
+    </select>
+
+    <input v-model.number="b" class="form-control">
+
+       
+
+    </form>
+
+       <h2>Result: {{a}} {{operator}} {{b}} = {{c}}</h2>
+
+     <pre>{{ $data }}</pre>
+    </div>
+    
+
+ <script src="js/vue.js"></script>
+
+ <script>
+ new Vue({
+    el: '#app',
+    data: {
+        a: 1,
+        b: 1,
+        operator: "+"
+    },
+    computed: {
+        c: function(){
+            var x =0;
+
+            switch (this.operator) {
+            case "+":
+            x = this.a + this.b
+            break;
+            case "-":
+            x = this.a - this.b
+            break;
+            case "*":
+            x = this.a * this.b
+            break;
+            case "/":
+            x = this.a / this.b
+            break;
+            }
+            return x;
+       }
+    }
+ });
+ </script>
+</body>
+
+</html>
